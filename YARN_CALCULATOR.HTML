@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YARN CALCULATOR</title>
+    <style>
+        *{
+            background-color: rgb(209, 182, 25);
+        }
+        h1{
+            background-color: black;
+            color: whitesmoke;
+        }
+        .container{
+            border: 1px solid black;
+            width: 400px;
+            height: 600px;
+            margin: auto;
+            border-radius: 15px;
+            background-color: black;
+            /* display: flex;
+            justify-content: center; */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+        .input{
+            background-color: whitesmoke;
+            height: 50px;
+            width: 250px;
+            border-radius: 15px;
+            font-size: 25PX;
+            text-align: center;
+            /* margin: auto; */
+            
+        }
+        button{
+            padding: 25px;
+            border-radius: 15px;
+            width: 200px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .res{
+            background-color:black;
+            color: white;
+            margin: auto;
+            border-radius: 15px;
+            width: 500px;
+            display: flex;
+            justify-content: center; 
+            font-size: 25px;
+            height: 110px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container>p{
+            background-color: black;
+            color: rgb(93, 94, 95);
+            font-weight: bold;
+            font-size: 22px;
+            display: flex;
+            justify-content: end;
+        }
+        .end{
+            border: 1px solid black;
+            height: 50px;
+            width: 190px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            background-color: black;
+            color: white;
+            border-radius: 15px;
+            
+        }
+        .botcont{
+            display: flex;
+            width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <H1>YARN CALCULATOR</H1>
+          <input class="input" type="number" id="rs" placeholder="Reed Space" >
+          <input class="input" type="number" id="ppi" placeholder="Pick" >
+          <input class="input" type="number" id="ccount" placeholder="Cotton Count" >
+          <input class="input" type="number" id="pcount" placeholder="Poly Count" >
+
+          <button onclick="myfunction()">CALCULATE</button>
+          <p>Creted by Sumit Patel</p>
+    </div>
+    <br>
+    <div class="botcont">
+        <div class="end" id="result">POLY CONSUME</div>
+   
+        <div class="end" id="res">COT CONSUME</div>
+    </div>
+  
+</body>
+</html>
+
+<script>
+    // document.querySelector("button").addEventListener("click",myfunction)
+    var rs= document.querySelector("#rs");
+    var pick=document.querySelector("#ppi");
+    var ccount=document.querySelector("#ccount");
+    var pcount=document.querySelector("#pcount")
+function myfunction()
+{
+    var a=rs.value;
+    var b=pick.value;
+    var c=ccount.value;
+    var d=pcount.value;
+// for poly count convert to ctn count
+    var e=5315/d;
+// pick divide3
+    var p=b/3;
+    var q=p*2;
+    cans=(a*p/1693/c).toFixed(5);
+    pans=(a*q/1693/e).toFixed(5);
+    document.getElementById("result").innerText=pans;
+    document.getElementById("res").innerText=cans;
+   
+}
+</script>
